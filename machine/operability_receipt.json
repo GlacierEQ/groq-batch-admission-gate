@@ -1,0 +1,19 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "at": "2026-08-09T22:37Z",
+  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "decision": "REFUSE",
+    "expected_decision": "REFUSE",
+    "expected_reason": "MAX_INFLIGHT",
+    "fingerprint": "bd5f9440bc1097ca2dae7cc1b0914e040e30cb73b5a9302ce27d5fdb98931ce3",
+    "ok": true,
+    "predicted_p95_ms": 70.0,
+    "reason": "MAX_INFLIGHT"
+  },
+  "dual_run_ok": true,
+  "result": "PASS",
+  "scratch_launch_log": "wave_b/groq-batch-admission-gate/launch.log"
+}

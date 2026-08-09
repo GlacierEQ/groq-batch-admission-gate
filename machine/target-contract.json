@@ -1,0 +1,11 @@
+{
+  "schema": "glaciereq.repo-target-contract.v1",
+  "identity": {
+    "repository_id": "GlacierEQ/groq-batch-admission-gate",
+    "family": "wave-b"
+  },
+  "nonclaims": [
+    "no employer affiliation implied by repository name",
+    "no production deployment claim without receipt"
+  ]
+}

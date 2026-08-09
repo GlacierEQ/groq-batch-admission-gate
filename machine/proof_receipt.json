@@ -1,0 +1,31 @@
+{
+  "schema": "glaciereq.proof-receipt.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
+  "proof_id": "wave-b-groq-batch-admission-gate-1786315039",
+  "environment": {
+    "python": "3.9.6",
+    "PYTHONPATH": "."
+  },
+  "tests": [
+    "PYTHONPATH=. python3 -m unittest discover -s tests -v (x2)"
+  ],
+  "adversarial_tests": [
+    "tests/test_adversarial.py"
+  ],
+  "runtime": {
+    "operate": "scripts/operate.py (x2)",
+    "dual_run_ok": true,
+    "proof_dual_run_ok": true
+  },
+  "result": "PASS",
+  "limitations": [
+    "not production deployed",
+    "reference implementation only"
+  ],
+  "timestamp": "2026-08-09T22:37Z",
+  "artifact_hashes": {
+    "operability_receipt": "688ea46ef0313360694aad55714e477325eb22dd097fd0494dc08e70e7d2fa8b"
+  },
+  "scratch_proof_log": "wave_b/groq-batch-admission-gate/proof.log"
+}

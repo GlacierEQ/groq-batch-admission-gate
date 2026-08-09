@@ -1,0 +1,131 @@
+{
+  "schema": "glaciereq.repo-excellence-state.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "principal_state": "PROMOTED",
+  "gates": {
+    "IDENTITY_RESOLVED": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "github GlacierEQ/groq-batch-admission-gate"
+    },
+    "PROBLEM_VERIFIED": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "ISSUE_CONTRACT.md or README problem"
+    },
+    "TARGET_CONTRACT_FROZEN": {
+      "status": "PENDING"
+    },
+    "DONOR_PLAN_RESOLVED": {
+      "status": "PENDING"
+    },
+    "VERTICAL_SLICE_ALIVE": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "src mechanism present"
+    },
+    "CENTRAL_MECHANISM_PRESENT": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "src core"
+    },
+    "DETERMINISTIC_PROOF_GREEN": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "unittest dual-run"
+    },
+    "ADVERSARIAL_SURVIVAL": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "tests/test_adversarial.py"
+    },
+    "OPERABLE_AND_OBSERVABLE": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "scripts/operate.py dual-run PASS + primary ok"
+    },
+    "PROOF_RECEIPT_BOUND": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "machine/proof_receipt.json digest=80f507bb01b39f8c\u2026"
+    },
+    "AUTHORITY_BOUND": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "machine/promotion_authority.json local HMAC grant verified"
+    },
+    "CANONICAL_POSITION_RESOLVED": {
+      "status": "PENDING"
+    },
+    "EVOLUTION_CURSOR_DEFINED": {
+      "status": "PASS",
+      "at": "2026-08-09T22:37Z",
+      "evidence": "wave-b excellence"
+    }
+  },
+  "history": [
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "DISCOVERED",
+      "to": "IDENTITY_RESOLVED",
+      "gate": "IDENTITY_RESOLVED",
+      "result": "PASS"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "IDENTITY_RESOLVED",
+      "to": "PROBLEM_VERIFIED",
+      "gate": "PROBLEM_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "SEEDED",
+      "to": "VERTICAL_SLICE",
+      "gate": "VERTICAL_SLICE_ALIVE",
+      "result": "PASS",
+      "note": "src mechanism present"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "TESTED",
+      "to": "ADVERSARIAL_VERIFIED",
+      "gate": "ADVERSARIAL_SURVIVAL",
+      "result": "PASS",
+      "note": "adversarial + deterministic suites green"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "ADVERSARIAL_VERIFIED",
+      "to": "OPERABLE",
+      "gate": "OPERABLE_AND_OBSERVABLE",
+      "result": "PASS",
+      "note": "cold-start operate dual-run green; primary observable correct"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "OPERABLE",
+      "to": "PROOF_REPRODUCED",
+      "gate": "PROOF_RECEIPT_BOUND",
+      "result": "PASS",
+      "note": "unittest dual-run PASS; proof receipt SHA-bound"
+    },
+    {
+      "at": "2026-08-09T22:37Z",
+      "from": "PROOF_REPRODUCED",
+      "to": "PROMOTED",
+      "gate": "AUTHORITY_BOUND",
+      "result": "PASS",
+      "note": "AUTHORITY_BOUND via local operator promotion authority"
+    }
+  ],
+  "contract_ref": "machine/target-contract.json",
+  "scores_ref": "machine/excellence-scores.json",
+  "evolution_cursor": "next:canonical_position_only_if_estate_role_resolved",
+  "wave": {
+    "id": "WAVE-B-2026-08-09",
+    "proof_ok": true,
+    "operable_ok": true,
+    "promoted_at": "2026-08-09T22:37Z"
+  }
+}

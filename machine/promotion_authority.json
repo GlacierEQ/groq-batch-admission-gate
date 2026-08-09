@@ -1,0 +1,10 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
+  "proof_receipt_digest": "80f507bb01b39f8cc9eaf2fd63ea986fe3aaf35a80d92772dfeca8331ead6cda",
+  "not_after": 1786401439.758687,
+  "mac": "0fd3381185490094dc98ed8b67610d16d51493112c7c81a13976ffcbda35544e",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true
+}
