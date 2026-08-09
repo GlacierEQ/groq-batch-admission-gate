@@ -1,8 +1,9 @@
 {
   "schema": "glaciereq.operability-receipt.v1",
   "repository": "GlacierEQ/groq-batch-admission-gate",
-  "at": "2026-08-09T22:37Z",
-  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
+  "at": "2026-08-09T22:57Z",
+  "source_sha": "3b456931fb30e7ae91cddf2a88b8a9fa878e47bcaa62dc19b0e3623411525ed4",
+  "source_sha_algorithm": "sha256(newline_join('{rel}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json))",
   "entry": "scripts/operate.py",
   "primary_output": {
     "decision": "REFUSE",

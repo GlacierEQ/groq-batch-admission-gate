@@ -1,6 +1,10 @@
 """Promotion authority — short-lived HMAC grant for PROMOTED gate.
 
 Independent reference. Not Helix; local operator authority for this leaf.
+
+Auditors re-verify grants with LOCAL_OPERATOR_SECRET and
+scripts/verify_promotion_grant.py against machine/promotion_authority.json
+bound to machine/proof_receipt.json digest + source_sha.
 """
 from __future__ import annotations
 
@@ -9,7 +13,10 @@ import hmac
 import json
 import time
 from dataclasses import dataclass
-from pathlib import Path
+
+
+# Reference local operator secret (NOT production). Documented for re-verification.
+LOCAL_OPERATOR_SECRET = b"glaciereq-local-operator-promotion-authority-v1"
 
 
 def _digest(obj: object) -> str:
@@ -32,6 +39,16 @@ class PromotionGrant:
             "not_after": self.not_after,
             "mac": self.mac,
         })
+
+    @classmethod
+    def from_dict(cls, d: dict) -> "PromotionGrant":
+        return cls(
+            repository=d["repository"],
+            source_sha=d["source_sha"],
+            proof_receipt_digest=d["proof_receipt_digest"],
+            not_after=float(d["not_after"]),
+            mac=d["mac"],
+        )
 
 
 class PromotionAuthority:
@@ -59,3 +76,40 @@ class PromotionAuthority:
         if not hmac.compare_digest(mac, grant.mac):
             return False, "BAD_MAC"
         return True, None
+
+
+def verify_bound_grant(
+    grant_dict: dict,
+    proof_receipt_path: str | bytes | "Path",
+    *,
+    secret: bytes = LOCAL_OPERATOR_SECRET,
+    now: float | None = None,
+) -> tuple[bool, str | None]:
+    """Verify a machine/promotion_authority.json grant against a proof receipt file.
+
+    Checks:
+      1) proof_receipt_digest == sha256(proof file bytes)
+      2) grant.source_sha == proof.source_sha
+      3) HMAC verify with operator secret
+    Fail-closed on any mismatch.
+    """
+    from pathlib import Path as _P
+    path = _P(proof_receipt_path)
+    if not path.is_file():
+        return False, "PROOF_RECEIPT_MISSING"
+    proof_bytes = path.read_bytes()
+    file_digest = hashlib.sha256(proof_bytes).hexdigest()
+    try:
+        proof = json.loads(proof_bytes.decode())
+    except Exception:
+        return False, "PROOF_RECEIPT_INVALID_JSON"
+    if grant_dict.get("proof_receipt_digest") != file_digest:
+        return False, "PROOF_DIGEST_MISMATCH"
+    if grant_dict.get("source_sha") != proof.get("source_sha"):
+        return False, "SOURCE_SHA_MISMATCH"
+    try:
+        grant = PromotionGrant.from_dict(grant_dict)
+    except Exception:
+        return False, "GRANT_MALFORMED"
+    auth = PromotionAuthority(secret, ttl_s=max(1.0, float(grant.not_after) - (now or time.time()) + 1.0))
+    return auth.verify(grant, now=now)

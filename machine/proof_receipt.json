@@ -1,8 +1,9 @@
 {
   "schema": "glaciereq.proof-receipt.v1",
   "repository": "GlacierEQ/groq-batch-admission-gate",
-  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
-  "proof_id": "wave-b-groq-batch-admission-gate-1786315039",
+  "source_sha": "3b456931fb30e7ae91cddf2a88b8a9fa878e47bcaa62dc19b0e3623411525ed4",
+  "source_sha_algorithm": "sha256(newline_join('{rel}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json))",
+  "proof_id": "wave-b-fix-groq-batch-admission-gate-1786316261",
   "environment": {
     "python": "3.9.6",
     "PYTHONPATH": "."
@@ -12,6 +13,9 @@
   ],
   "adversarial_tests": [
     "tests/test_adversarial.py"
+  ],
+  "authority_tests": [
+    "tests/test_promotion_authority.py::test_real_machine_grant_verifies_against_proof_receipt"
   ],
   "runtime": {
     "operate": "scripts/operate.py (x2)",
@@ -23,9 +27,9 @@
     "not production deployed",
     "reference implementation only"
   ],
-  "timestamp": "2026-08-09T22:37Z",
+  "timestamp": "2026-08-09T22:57Z",
   "artifact_hashes": {
-    "operability_receipt": "688ea46ef0313360694aad55714e477325eb22dd097fd0494dc08e70e7d2fa8b"
+    "operability_receipt": "d262755a27c5a6e4d7d9608c3ed75c2fb6a3a1a777150f7ffd0f54c0753da572"
   },
   "scratch_proof_log": "wave_b/groq-batch-admission-gate/proof.log"
 }

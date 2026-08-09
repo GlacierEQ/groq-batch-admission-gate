@@ -1,10 +1,12 @@
 {
   "schema": "glaciereq.promotion-authority-grant.v1",
   "repository": "GlacierEQ/groq-batch-admission-gate",
-  "source_sha": "4a45bb738b62d998ea06377e0a67b6dd3f6c824092356c050382c646705c951e",
-  "proof_receipt_digest": "80f507bb01b39f8cc9eaf2fd63ea986fe3aaf35a80d92772dfeca8331ead6cda",
-  "not_after": 1786401439.758687,
-  "mac": "0fd3381185490094dc98ed8b67610d16d51493112c7c81a13976ffcbda35544e",
+  "source_sha": "3b456931fb30e7ae91cddf2a88b8a9fa878e47bcaa62dc19b0e3623411525ed4",
+  "proof_receipt_digest": "5503e04513107a5d82cab9b924cb398c87552763b6ca7c94c0d13d6b2a719af6",
+  "not_after": 1788908261.7824872,
+  "mac": "ad4269a8ef0a8fa498f7d7574393e726e85841ffc29a998d7707f91e42041a59",
   "issuer": "local_operator_promotion_authority",
-  "verified": true
+  "verified": true,
+  "verification_procedure": "LOCAL reference authority only. Secret constant: src/promotion_authority.py::LOCAL_OPERATOR_SECRET (= b'glaciereq-local-operator-promotion-authority-v1'). Verify: python3 scripts/verify_promotion_grant.py",
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
 }

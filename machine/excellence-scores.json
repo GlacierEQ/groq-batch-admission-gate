@@ -5,11 +5,11 @@
   "axes": {
     "target_architecture": {
       "grade": "B",
-      "notes": "central mechanism present"
+      "notes": "contract frozen"
     },
     "current_proof": {
       "grade": "A",
-      "notes": "dual-run green + adversarial"
+      "notes": "dual-run green + real grant verify"
     },
     "company_fit": {
       "score": 0.0,
