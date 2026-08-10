@@ -1,1 +1,23 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "capability_family": "latency_budget_admission_control",
+  "capabilities": [
+    "predictive-p95-batch-admission",
+    "max-inflight-capacity-refusal",
+    "explicit-latency-budget-gating",
+    "empty-batch-refusal",
+    "queue-pressure-admission-control",
+    "deterministic-admission-receipts"
+  ],
+  "evidence_refs": [
+    "src/admission.py",
+    "go/admit/admit.go",
+    "tests/test_admission.py",
+    "tests/test_adversarial.py",
+    "go/admit/admit_test.go",
+    "machine/proof_receipt.json",
+    "machine/canonical-position.json"
+  ],
+  "truth_boundary": "Repository-local admission-control mechanisms only. No Groq adoption, production scheduler deployment, or company-internal capacity model is implied."
+}
