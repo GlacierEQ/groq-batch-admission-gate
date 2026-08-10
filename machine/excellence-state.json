@@ -1,44 +1,4 @@
 {
-<<<<<<< HEAD
-  "schema":"glaciereq.repo-excellence-state.v1",
-  "repository":"GlacierEQ/groq-batch-admission-gate",
-  "principal_state":"EVOLVING",
-  "gates":{
-    "IDENTITY_RESOLVED":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"github GlacierEQ/groq-batch-admission-gate"},
-    "PROBLEM_VERIFIED":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"ISSUE_CONTRACT.md / README problem bound"},
-    "TARGET_CONTRACT_FROZEN":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"machine/target-contract.json frozen"},
-    "DONOR_PLAN_RESOLVED":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"wave-b seed; donor_reuse=none (original)"},
-    "VERTICAL_SLICE_ALIVE":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"src mechanism + scripts/operate.py"},
-    "CENTRAL_MECHANISM_PRESENT":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"central mechanism in src/"},
-    "DETERMINISTIC_PROOF_GREEN":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"unittest dual-run green"},
-    "ADVERSARIAL_SURVIVAL":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"tests/test_adversarial.py dual-run green"},
-    "OPERABLE_AND_OBSERVABLE":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"scripts/operate.py dual-run PASS; primary content-checked (SCRATCH launch.log)"},
-    "PROOF_RECEIPT_BOUND":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"machine/proof_receipt.json digest=5503e04513107a5d82cab9b924cb398c87552763b6ca7c94c0d13d6b2a719af6; source_sha=3b456931fb30e7ae…; dual-run proof.log green"},
-    "AUTHORITY_BOUND":{"status":"PASS","at":"2026-08-09T22:57Z","evidence":"machine/promotion_authority.json HMAC verified via LOCAL_OPERATOR_SECRET + verify_promotion_grant.py"},
-    "CANONICAL_POSITION_RESOLVED":{"status":"PASS","at":"2026-08-10T01:18:00Z","evidence":"machine/canonical-position.json"},
-    "EVOLUTION_CURSOR_DEFINED":{"status":"PASS","at":"2026-08-10T01:18:00Z","evidence":"machine/canonical-position.json#next_evolution"}
-  },
-  "history":[
-    {"at":"2026-08-09T22:57Z","from":"DISCOVERED","to":"IDENTITY_RESOLVED","gate":"IDENTITY_RESOLVED","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"IDENTITY_RESOLVED","to":"PROBLEM_VERIFIED","gate":"PROBLEM_VERIFIED","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"PROBLEM_VERIFIED","to":"TARGET_CONTRACTED","gate":"TARGET_CONTRACT_FROZEN","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"TARGET_CONTRACTED","to":"SEEDED","gate":"DONOR_PLAN_RESOLVED","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"SEEDED","to":"VERTICAL_SLICE","gate":"VERTICAL_SLICE_ALIVE","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"VERTICAL_SLICE","to":"IMPLEMENTED","gate":"CENTRAL_MECHANISM_PRESENT","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"IMPLEMENTED","to":"TESTED","gate":"DETERMINISTIC_PROOF_GREEN","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"TESTED","to":"ADVERSARIAL_VERIFIED","gate":"ADVERSARIAL_SURVIVAL","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"ADVERSARIAL_VERIFIED","to":"OPERABLE","gate":"OPERABLE_AND_OBSERVABLE","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"OPERABLE","to":"PROOF_REPRODUCED","gate":"PROOF_RECEIPT_BOUND","result":"PASS"},
-    {"at":"2026-08-09T22:57Z","from":"PROOF_REPRODUCED","to":"PROMOTED","gate":"AUTHORITY_BOUND","result":"PASS"},
-    {"at":"2026-08-10T01:18:00Z","from":"PROMOTED","to":"CANONICAL","gate":"CANONICAL_POSITION_RESOLVED","result":"PASS","note":"independent Groq-specialist position resolved; identity and lineage preserved"},
-    {"at":"2026-08-10T01:18:00Z","from":"CANONICAL","to":"EVOLVING","gate":"EVOLUTION_CURSOR_DEFINED","result":"PASS","note":"next evolution bound in machine/canonical-position.json"}
-  ],
-  "contract_ref":"machine/target-contract.json",
-  "scores_ref":"machine/excellence-scores.json",
-  "canonical_position_ref":"machine/canonical-position.json",
-  "evolution_cursor":"next:nonstationary queue estimation + workload-class budgets + adaptive admission",
-  "wave":{"id":"WAVE-B-FIX-2026-08-09","proof_ok":true,"operable_ok":true,"promoted_at":"2026-08-09T22:57Z","history_continuous":true,"source_sha_algorithm":"sha256 of newline-joined '{relpath}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json"}
-=======
   "schema": "glaciereq.repo-excellence-state.v1",
   "repository": "GlacierEQ/groq-batch-admission-gate",
   "principal_state": "PROMOTED",
@@ -206,5 +166,4 @@
     "operable_ok": true,
     "promoted_at": "2026-08-10T04:12Z"
   }
->>>>>>> d01a076 (chore: Hyper Excellence Activation & structural matrix alignment)
 }
