@@ -1,0 +1,22 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "position_state": "RESOLVED",
+  "role": "company_specific_specialist_system",
+  "company_target": "Groq",
+  "canonical_identity": "batch-admission-gate",
+  "unique_value": [
+    "batch admission is governed by a capacity model rather than accepting work until queues collapse",
+    "predicted p95 latency is compared against an explicit budget before admission",
+    "over-budget work is refused instead of degrading tail latency silently"
+  ],
+  "capability_contribution": {
+    "family": "latency_budget_admission_control",
+    "extractable_mechanisms": ["predictive p95 admission", "capacity-budget refusal", "queue-pressure gating"],
+    "ownership": "This repository remains the owning Groq-specialist implementation; extraction preserves identity and lineage."
+  },
+  "integration_policy": {"preserve_repository_identity":true,"preserve_lineage":true,"presentation_independent":true,"size_or_loc_not_dispositive":true,"absorption_requires_functional_equivalence":true,"absorption_requires_proof_equivalence":true},
+  "next_evolution": "Add nonstationary queue estimation, workload-class budgets, and adaptive admission thresholds while keeping hard latency-budget refusal explicit.",
+  "evidence_refs": ["ISSUE_CONTRACT.md","machine/target-contract.json","machine/proof_receipt.json","machine/operability_receipt.json","machine/promotion_authority.json"],
+  "nonclaims": ["no Groq affiliation", "not a production Groq scheduler"]
+}
