@@ -2,8 +2,7 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/groq-batch-admission-gate",
-    "family": "wave-b",
-    "local_name": "groq-batch-admission-gate"
+    "family": "elite-estate"
   },
   "current": {
     "state": "PROMOTED",
@@ -11,27 +10,13 @@
     "tested": true,
     "deployed": false
   },
-  "target": {
-    "purpose": "Wave B excellence leaf groq-batch-admission-gate",
-    "central_bottleneck": "operable + adversarial-proof + authority-bound promotion"
-  },
-  "invariants": [
-    "no prose-only gate advance",
-    "proof receipt SHA-bound to source tree"
-  ],
-  "promotion": {
-    "require_exact_source_sha": true,
-    "require_receipt": true,
-    "require_nonclaims": true
-  },
   "nonclaims": [
-    "no employer affiliation implied by repository name",
-    "no production deployment claim without receipt"
+    "no employer affiliation",
+    "no production deployment without receipt"
   ],
   "donor_plan": {
     "mode": "none",
-    "donors": [],
-    "note": "original wave-b mechanism"
+    "donors": []
   },
-  "frozen_at": "2026-08-09T22:57Z"
+  "frozen_at": "2026-08-10T04:12Z"
 }

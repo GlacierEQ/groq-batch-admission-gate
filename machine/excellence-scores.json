@@ -4,17 +4,13 @@
   "never_collapse": true,
   "axes": {
     "target_architecture": {
-      "grade": "B",
-      "notes": "contract frozen"
+      "grade": "B"
     },
     "current_proof": {
-      "grade": "A",
-      "notes": "dual-run green + real grant verify"
+      "grade": "A"
     },
     "company_fit": {
-      "score": 0.0,
-      "company": "",
-      "bottleneck": ""
+      "score": 0.0
     },
     "canonical_confidence": {
       "score": 0.0,
