@@ -5,6 +5,8 @@
   "capabilities": [
     "predictive-p95-batch-admission",
     "max-inflight-capacity-refusal",
+    "explicit-latency-budget-gating",
+    "deterministic-admission-receipts",
     "workload-class-inflight-and-batch-budgets",
     "explicit-workload-class-latency-budget-gating",
     "cold-start-insufficient-evidence-refusal",
