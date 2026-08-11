@@ -1,0 +1,32 @@
+{
+  "schema": "glaciereq.repo-evolution-receipt.v1",
+  "repository": "GlacierEQ/groq-batch-admission-gate",
+  "consumed_cursor": "next:nonstationary_queue_estimation_workload_class_budgets_adaptive_thresholds_hard_latency_refusal",
+  "candidate_source_sha": "41eb3e157061c4483d813f70575d4ae7d6c95548",
+  "workflow_run": 31538611693,
+  "python": "PASS",
+  "go": "PASS",
+  "implemented": [
+    "bounded fast/slow EWMA service-time estimation for nonstationary load",
+    "per-workload p95 latency, class-inflight, batch-size, and minimum-evidence budgets",
+    "bounded adaptive safety factor from fast/slow divergence and service-time deviation",
+    "hard refusal for unknown classes, insufficient evidence, invalid state, global capacity, class capacity, batch limits, and p95 budget breach",
+    "deterministic structured adaptive admission receipts",
+    "legacy fixed admission APIs preserved without semantic replacement"
+  ],
+  "adversarial_proof": [
+    "sudden latency shock raises change ratio and safety factor then flips admission to refusal",
+    "one workload class cannot borrow evidence from another",
+    "interactive and bulk classes can reach different decisions under the same total queue state",
+    "capacity and batch caps remain hard refusals regardless of learned estimate",
+    "unknown classes and invalid load snapshots fail closed"
+  ],
+  "truth_boundaries": [
+    "service-time observations are caller supplied and are not authenticated provider telemetry",
+    "the estimator is bounded deterministic EWMA adaptation, not arbitrary online policy learning",
+    "model evidence does not yet expire by freshness or survive process restart",
+    "budget state is local to one controller instance and is not distributed or quorum coordinated",
+    "no Groq affiliation, adoption, production deployment, or internal scheduler knowledge is claimed"
+  ],
+  "next_cursor": "next:authenticated_observation_provenance_model_freshness_restart_safe_state_and_distributed_budget_coordination"
+}

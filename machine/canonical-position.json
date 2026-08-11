@@ -6,17 +6,57 @@
   "company_target": "Groq",
   "canonical_identity": "batch-admission-gate",
   "unique_value": [
-    "batch admission is governed by a capacity model rather than accepting work until queues collapse",
-    "predicted p95 latency is compared against an explicit budget before admission",
+    "batch admission is governed by an explicit capacity and latency model rather than accepting work until queues collapse",
+    "predicted p95 latency is compared against a workload-class budget before admission",
+    "unknown or cold-start workload classes refuse until their declared minimum evidence requirement is met",
+    "nonstationary service evidence tightens admission through bounded fast/slow estimates and a clamped safety factor",
     "over-budget work is refused instead of degrading tail latency silently"
   ],
   "capability_contribution": {
     "family": "latency_budget_admission_control",
-    "extractable_mechanisms": ["predictive p95 admission", "capacity-budget refusal", "queue-pressure gating"],
+    "extractable_mechanisms": [
+      "predictive p95 admission",
+      "global and workload-class capacity refusal",
+      "per-class latency and batch budgets",
+      "bounded nonstationary fast/slow EWMA estimation",
+      "bounded adaptive safety thresholds",
+      "cold-start evidence refusal",
+      "deterministic adaptive admission receipts"
+    ],
     "ownership": "This repository remains the owning Groq-specialist implementation; extraction preserves identity and lineage."
   },
-  "integration_policy": {"preserve_repository_identity":true,"preserve_lineage":true,"presentation_independent":true,"size_or_loc_not_dispositive":true,"absorption_requires_functional_equivalence":true,"absorption_requires_proof_equivalence":true},
-  "next_evolution": "Add nonstationary queue estimation, workload-class budgets, and adaptive admission thresholds while keeping hard latency-budget refusal explicit.",
-  "evidence_refs": ["ISSUE_CONTRACT.md","machine/target-contract.json","machine/proof_receipt.json","machine/operability_receipt.json","machine/promotion_authority.json"],
-  "nonclaims": ["no Groq affiliation", "not a production Groq scheduler"]
+  "integration_policy": {
+    "preserve_repository_identity": true,
+    "preserve_lineage": true,
+    "presentation_independent": true,
+    "size_or_loc_not_dispositive": true,
+    "absorption_requires_functional_equivalence": true,
+    "absorption_requires_proof_equivalence": true
+  },
+  "evolution": {
+    "consumed_cursor": "next:nonstationary_queue_estimation_workload_class_budgets_adaptive_thresholds_hard_latency_refusal",
+    "candidate_source_sha": "41eb3e157061c4483d813f70575d4ae7d6c95548",
+    "workflow_run": 31538611693,
+    "receipt": "machine/evolution-receipts/2026-08-11-nonstationary-class-admission.json"
+  },
+  "next_evolution": "Authenticate observation provenance, expire stale model evidence, persist estimator state safely across restart, and coordinate budgets across controller instances without weakening hard refusal.",
+  "evidence_refs": [
+    "ISSUE_CONTRACT.md",
+    "src/admission.py",
+    "go/admit/admit.go",
+    "tests/test_adaptive_admission.py",
+    "go/admit/adaptive_test.go",
+    "machine/target-contract.json",
+    "machine/evolution-receipts/2026-08-11-nonstationary-class-admission.json",
+    "machine/proof_receipt.json",
+    "machine/operability_receipt.json",
+    "machine/promotion_authority.json"
+  ],
+  "nonclaims": [
+    "no Groq affiliation",
+    "not a production Groq scheduler",
+    "service-time observations are caller supplied rather than authenticated provider telemetry",
+    "no arbitrary policy learning or unbounded online optimization",
+    "no restart-safe or distributed adaptive state yet"
+  ]
 }

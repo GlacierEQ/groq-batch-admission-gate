@@ -5,18 +5,50 @@
     "family": "elite-estate"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
     "deployed": false
   },
+  "mechanism": {
+    "legacy_surface": "fixed batch admission remains backward compatible",
+    "adaptive_surface": "explicit workload-class controller with bounded nonstationary service estimation",
+    "hard_refusals": [
+      "unknown workload class",
+      "insufficient evidence",
+      "invalid load state",
+      "global inflight capacity",
+      "class inflight capacity",
+      "class batch size",
+      "p95 latency budget"
+    ],
+    "adaptation_bounds": [
+      "fixed fast/slow EWMA coefficients",
+      "fixed deviation EWMA coefficient",
+      "clamped safety factor",
+      "caller-declared workload budgets"
+    ]
+  },
+  "proof": {
+    "consumed_cursor": "next:nonstationary_queue_estimation_workload_class_budgets_adaptive_thresholds_hard_latency_refusal",
+    "candidate_source_sha": "41eb3e157061c4483d813f70575d4ae7d6c95548",
+    "workflow_run": 31538611693,
+    "python": "PASS",
+    "go": "PASS",
+    "receipt": "machine/evolution-receipts/2026-08-11-nonstationary-class-admission.json"
+  },
+  "next_cursor": "next:authenticated_observation_provenance_model_freshness_restart_safe_state_and_distributed_budget_coordination",
   "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+    "no Groq affiliation",
+    "no production deployment without receipt",
+    "no provider telemetry or authenticated observation source",
+    "no arbitrary online policy learning",
+    "no restart-safe or distributed controller state yet"
   ],
   "donor_plan": {
     "mode": "none",
     "donors": []
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "frozen_at": "2026-08-10T04:12Z",
+  "refreshed_at": "2026-08-11T21:36Z"
 }
