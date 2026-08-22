@@ -1,10 +1,10 @@
 {
-  "schema": "glaciereq.repo-canonical-position.v1",
+  "schema": "glaciereq.repo-role-position.v1",
   "repository": "GlacierEQ/groq-batch-admission-gate",
-  "position_state": "RESOLVED",
+  "position_state": "EVIDENCE_TRACKED",
   "role": "company_specific_specialist_system",
   "company_target": "Groq",
-  "canonical_identity": "batch-admission-gate",
+  "system_identity": "batch-admission-gate",
   "unique_value": [
     "batch admission is governed by an explicit capacity and latency model rather than accepting work until queues collapse",
     "predicted p95 latency is compared against a workload-class budget before admission",
@@ -23,7 +23,7 @@
       "cold-start evidence refusal",
       "deterministic adaptive admission receipts"
     ],
-    "ownership": "This repository remains the owning Groq-specialist implementation; extraction preserves identity and lineage."
+    "ownership": "This repository contributes the Groq-specialist implementation; future evidence can refine the role while preserving identity and lineage."
   },
   "integration_policy": {
     "preserve_repository_identity": true,

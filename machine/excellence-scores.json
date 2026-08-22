@@ -12,7 +12,7 @@
     "company_fit": {
       "score": 0.0
     },
-    "canonical_confidence": {
+    "role_evidence_confidence": {
       "score": 0.0,
       "role": "PROMOTED_LEAF"
     }

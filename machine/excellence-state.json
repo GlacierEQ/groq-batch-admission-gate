@@ -14,12 +14,12 @@
     "OPERABLE_AND_OBSERVABLE": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "existing scripts/operate.py preserved; adaptive controller exposes model snapshots and structured decision receipts"},
     "PROOF_RECEIPT_BOUND": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "machine/proof_receipt.json retained + machine/evolution-receipts/2026-08-11-nonstationary-class-admission.json"},
     "AUTHORITY_BOUND": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "independent reference authority only; observations remain caller supplied and unauthenticated"},
-    "PROJECTION_TRUTH_CLOSED": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "canonical position preserves no Groq affiliation/adoption, no production scheduler claim, no provider telemetry claim, and no arbitrary online-learning claim"},
-    "CANONICAL_POSITION_RESOLVED": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "machine/canonical-position.json owns latency_budget_admission_control with adaptive evolution bound"},
+    "PROJECTION_TRUTH_CLOSED": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "evidence-tracked role position preserves no Groq affiliation/adoption, no production scheduler claim, no provider telemetry claim, and no arbitrary online-learning claim"},
+    "ROLE_POSITION_EVIDENCED": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "machine/role-position.json describes latency_budget_admission_control with adaptive evolution"},
     "EVOLUTION_CURSOR_DEFINED": {"status": "PASS", "at": "2026-08-11T21:36Z", "evidence": "next:authenticated_observation_provenance_model_freshness_restart_safe_state_and_distributed_budget_coordination"},
     "problem_verified": true,
     "unique_value_known": true,
-    "canonical_identity_known": true,
+    "system_identity_known": true,
     "central_mechanism_implemented": true,
     "deterministic_tests_pass": true,
     "adversarial_tests_pass": true,
@@ -42,8 +42,8 @@
     {"at": "2026-08-10T06:25Z", "from": "ADVERSARIAL_VERIFIED", "to": "OPERABLE", "gate": "OPERABLE_AND_OBSERVABLE", "result": "PASS", "note": "scripts/operate.py dual-run PASS; primary ok"},
     {"at": "2026-08-10T06:25Z", "from": "OPERABLE", "to": "PROOF_REPRODUCED", "gate": "PROOF_RECEIPT_BOUND", "result": "PASS", "note": "machine/proof_receipt.json bound"},
     {"at": "2026-08-10T06:25Z", "from": "PROOF_REPRODUCED", "to": "PROMOTED", "gate": "AUTHORITY_BOUND", "result": "PASS", "note": "promotion_authority + PROJECTION_TRUTH_CLOSED"},
-    {"at": "2026-08-10T10:24Z", "from": "PROMOTED", "to": "CANONICAL", "gate": "CANONICAL_POSITION_RESOLVED", "result": "PASS", "note": "existing canonical-position authority resolves batch-admission-gate as the owning Groq-specialist implementation of latency-budget admission control"},
-    {"at": "2026-08-10T10:24Z", "from": "CANONICAL", "to": "EVOLVING", "gate": "EVOLUTION_CURSOR_DEFINED", "result": "PASS", "note": "add nonstationary queue estimation, workload-class budgets, and adaptive thresholds while preserving hard latency-budget refusal"}
+    {"at": "2026-08-10T10:24Z", "from": "PROMOTED", "to": "ROLE_POSITIONED", "gate": "ROLE_POSITION_EVIDENCED", "result": "PASS", "note": "existing role evidence identifies batch-admission-gate as a Groq-specialist implementation of latency-budget admission control"},
+    {"at": "2026-08-10T10:24Z", "from": "ROLE_POSITIONED", "to": "EVOLVING", "gate": "EVOLUTION_CURSOR_DEFINED", "result": "PASS", "note": "add nonstationary queue estimation, workload-class budgets, and adaptive thresholds while preserving hard latency-budget refusal"}
   ],
   "evolution_history": [
     {
@@ -57,7 +57,7 @@
   ],
   "contract_ref": "machine/target-contract.json",
   "scores_ref": "machine/excellence-scores.json",
-  "canonical_position_ref": "machine/canonical-position.json",
+  "role_position_ref": "machine/role-position.json",
   "capabilities_ref": "machine/capabilities.json",
   "evolution_cursor": "next:authenticated_observation_provenance_model_freshness_restart_safe_state_and_distributed_budget_coordination",
   "wave": {
@@ -66,7 +66,7 @@
     "operable_ok": true,
     "promoted_at": "2026-08-10T04:12Z",
     "projection_truth_closed_at": "2026-08-10T06:25Z",
-    "canonical_position_resolved_at": "2026-08-10T10:24Z",
+    "role_position_evidenced_at": "2026-08-10T10:24Z",
     "policy": "glaciereq.repo-excellence.promotion-policy.v1"
   },
   "state": "EVOLVING",

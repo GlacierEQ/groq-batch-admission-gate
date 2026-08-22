@@ -28,7 +28,7 @@
     "go/admit/adaptive_test.go",
     "machine/evolution-receipts/2026-08-11-nonstationary-class-admission.json",
     "machine/proof_receipt.json",
-    "machine/canonical-position.json"
+    "machine/role-position.json"
   ],
   "truth_boundary": "Repository-local admission-control mechanisms using caller-supplied service observations. No Groq adoption, provider telemetry, production scheduler deployment, arbitrary online policy learning, restart-safe adaptive state, or distributed budget coordination is implied."
 }

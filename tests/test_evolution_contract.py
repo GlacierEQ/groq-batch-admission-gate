@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATE_PATH = ROOT / "machine" / "excellence-state.json"
 TARGET_PATH = ROOT / "machine" / "target-contract.json"
-CANONICAL_PATH = ROOT / "machine" / "canonical-position.json"
+ROLE_POSITION_PATH = ROOT / "machine" / "role-position.json"
 RECEIPT_PATH = (
     ROOT
     / "machine"
@@ -61,9 +61,9 @@ class EvolutionContractTests(unittest.TestCase):
         self.assertIn("no provider telemetry", nonclaims)
         self.assertIn("no restart-safe", nonclaims)
 
-    def test_receipt_and_canonical_position_preserve_claim_ceiling(self):
+    def test_receipt_and_role_position_preserve_claim_ceiling(self):
         receipt = self.load(RECEIPT_PATH)
-        canonical = self.load(CANONICAL_PATH)
+        role_position = self.load(ROLE_POSITION_PATH)
         self.assertEqual(receipt["consumed_cursor"], CONSUMED)
         self.assertEqual(receipt["candidate_source_sha"], CANDIDATE)
         self.assertEqual(receipt["workflow_run"], RUN)
@@ -74,8 +74,8 @@ class EvolutionContractTests(unittest.TestCase):
         self.assertIn("caller supplied", boundaries)
         self.assertIn("not distributed", boundaries)
         self.assertIn("no groq affiliation", boundaries)
-        self.assertEqual(canonical["position_state"], "RESOLVED")
-        self.assertIn("Authenticate observation provenance", canonical["next_evolution"])
+        self.assertEqual(role_position["position_state"], "EVIDENCE_TRACKED")
+        self.assertIn("Authenticate observation provenance", role_position["next_evolution"])
 
 
 if __name__ == "__main__":
